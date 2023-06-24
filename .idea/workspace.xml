@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="febaaabb-a35c-429b-b299-f699b3e8a6b5" name="Changes" comment="Design of data structures&#10;according to the domain">
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/CRUD_operations_in_contacts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/List_of_commands.java" afterDir="false" />
+    <list default="true" id="febaaabb-a35c-429b-b299-f699b3e8a6b5" name="Changes" comment="Creating a life cycle&#10;console program">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/CRUD_operations_in_contacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CRUD_operations_in_contacts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/List_of_commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/List_of_commands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/output/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/output/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687634072288</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Creating a life cycle&#10;console program">
+      <created>1687636175678</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687636175678</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -87,6 +94,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Design of data structures&#10;according to the domain" />
-    <option name="LAST_COMMIT_MESSAGE" value="Design of data structures&#10;according to the domain" />
+    <MESSAGE value="Creating a life cycle&#10;console program" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating a life cycle&#10;console program" />
   </component>
 </project>
