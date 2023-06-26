@@ -56,7 +56,7 @@ public class CRUD_operations_in_contacts implements List_of_commands {
             }
         }
         if(the_number_of_searches > 1){
-            return -1;
+            return -2;
         }else {
             return id_contact;
         }

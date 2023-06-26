@@ -9,7 +9,7 @@ public record Contact_Information(int id, String name, String lastname, int phon
     public String toString() {
         StringBuilder output_contact = new StringBuilder();
         if(name.length() > 1){
-            output_contact.append("Ім'я: ").append(name);
+            output_contact.append("\nІм'я: ").append(name);
         }
         if(lastname.length() > 1){
             output_contact.append("\nПрізвище: ").append(lastname);
