@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="febaaabb-a35c-429b-b299-f699b3e8a6b5" name="Changes" comment="Creating an interface for CRUD operations">
+    <list default="true" id="febaaabb-a35c-429b-b299-f699b3e8a6b5" name="Changes" comment="Creating a console user interface">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/CRUD_operations_in_contacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CRUD_operations_in_contacts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/Contact_Groups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/Contact_Groups.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/Contact_Information.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/Contact_Information.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/List_of_commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/List_of_commands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/output/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/output/Main.java" afterDir="false" />
@@ -46,7 +45,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "last_opened_file_path": "D:/Java/Обчислювальний практикум Ротар Катерина 144(б) група/Computational_practice_Contacts_Rotar_Kateryna"
+    "last_opened_file_path": "D:/Java/IdeaProjects/Programming/Lab_12_2"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -86,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687641966365</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Creating a console user interface">
+      <created>1687728047168</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687728047169</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,6 +111,7 @@
     <MESSAGE value="Design of data structures&#10;according to the domain" />
     <MESSAGE value="Creating a life cycle&#10;console program" />
     <MESSAGE value="Creating an interface for CRUD operations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating an interface for CRUD operations" />
+    <MESSAGE value="Creating a console user interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating a console user interface" />
   </component>
 </project>

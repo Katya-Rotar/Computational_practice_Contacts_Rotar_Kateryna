@@ -4,8 +4,6 @@ import data.CRUD_operations_in_contacts;
 import data.Contact_Information;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -13,7 +11,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         CRUD_operations_in_contacts crud = new CRUD_operations_in_contacts();
-        List<Contact_Information> contact = new ArrayList<>();
         int id = 0;
         while (true){
             System.out.println("""
@@ -29,13 +26,7 @@ public class Main {
                     -----------------------""");
             String action_1 = scanner.nextLine();
             switch (action_1){
-                case "1" -> {
-                    if(!contact.isEmpty()){
-                        crud.readContact(contact);
-                    }else {
-                        System.out.println("Контакти відсутні");
-                    }
-                }
+                case "1" -> crud.readContact();
                 case "2" ->{
                     System.out.println("""
                             Сортувати за:
@@ -43,7 +34,7 @@ public class Main {
                             2. Прізвищем
                             3. Днем народження""");
                     String sort_action = scanner.nextLine();
-                    crud.sortContact(contact, sort_action);
+                    crud.sortContact(sort_action);
                 }
                 case "3" -> {
                     System.out.println("Додавання нового контакту\n" +
@@ -56,24 +47,32 @@ public class Main {
                     int phone_number = Integer.parseInt(scanner.nextLine());
                     // обмеження в кількості чисел
                     // замінити
-
-
-
-
                     System.out.println("Email:");
                     String email = scanner.nextLine();
                     System.out.println("День народження:");
-                    // зробити можливіть не уводити день народження або певний фрагмет без викиду помилок
                     System.out.println("Рік:");
-                    int year = Integer.parseInt(scanner.nextLine());
+                    String year = scanner.nextLine();
+                    int now_year = LocalDate.now().getYear();
+                    int year_of_birth = Integer.parseInt(year);
+                    if(year.length() < 1 || year_of_birth > now_year){
+                        year_of_birth = now_year;
+                    }
                     System.out.println("Місяць");
-                    int month = Integer.parseInt(scanner.nextLine());
+                    String month = scanner.nextLine();
+                    int month_of_birth = Integer.parseInt(month);
+                    if(month.length() < 1 || month_of_birth < 1 || month_of_birth > 12){
+                        month_of_birth = 0;
+                    }
                     System.out.println("День");
-                    int day = Integer.parseInt(scanner.nextLine());
-                    LocalDate date_of_birth = LocalDate.of(year,month,day);
+                    String day = scanner.nextLine();
+                    int day_of_birth = Integer.parseInt(day);
+                    if(day.length() < 1 || day_of_birth < 1 || day_of_birth > 31){
+                        day_of_birth = 0;
+                    }
+                    LocalDate date_of_birth = LocalDate.of(year_of_birth,month_of_birth,day_of_birth);
                     Contact_Information contact_information = new Contact_Information(id, name, lastname, phone_number,
                             email, date_of_birth);
-                    crud.addContact(contact_information, contact);
+                    crud.addContact(contact_information);
                 }
                 case "4" ->{
 
@@ -81,16 +80,21 @@ public class Main {
                 case "5" ->{
                     System.out.println("Введіть контакт який потрібно видалити");
                     String delete_contact = scanner.nextLine();
-                    int id_delete = crud.searchContact(contact, delete_contact);
+                    int id_delete = crud.searchContact(delete_contact);
                     // якщо нічого не знайдено не видаляємо
                     // передбачити випадок коли під час пошуку знайдено кілька значень
-                    crud.deleteContact(contact, id_delete);
+                    crud.deleteContact(id_delete);
                 }
                 case "6" -> {
                     System.out.println("Введіть контакт який потрібно ");
                     String search_contact = scanner.nextLine();
-                    crud.searchContact(contact,search_contact);
+                    crud.searchContact(search_contact);
                 }
+                case "7" -> System.out.println("""
+                    Ця програма використовується для збереження інформації про абонента та його номер\s
+                    В ній ви зможите переглядати контакти (1), сортувати контакти (2), додати контакт (3),
+                    редагувати контакт (4), видалити контакт (5).
+                    """);
                 case "0" -> System.exit(0);
                 default -> System.out.println("Такої дії не існує. Виберіть іншу\n");
             }

@@ -4,28 +4,29 @@ import java.time.LocalDate;
 
 public record Contact_Information(int id, String name, String lastname, int phone_number, String email,
                                   LocalDate date_of_birth) {
+    // record для користувача (ім'я,  прізвище)
     @Override
     public String toString() {
-        String name1 = "", lastname1 = "",phone_number1 = "", email1 = "", date_of_birth1;
+        StringBuilder output_contact = new StringBuilder();
         if(name.length() > 1){
-            name1 = "Ім'я: " + name;
+            output_contact.append("Ім'я: ").append(name);
         }
         if(lastname.length() > 1){
-            lastname1 = "\nПрізвище: " + lastname ;
+            output_contact.append("\nПрізвище: ").append(lastname);
         }
         if(phone_number > 1){
-            phone_number1 = "\nТелефон: " + phone_number;
+            output_contact.append("\nТелефон: ").append(phone_number);
         }
         if(email.length() > 1){
-            email1 = "\nEmail: " + email;
+            output_contact.append("\nEmail: ").append(email);
         }
         LocalDate today = LocalDate.now();
         if(date_of_birth.getMonth() == today.getMonth() && date_of_birth.getDayOfMonth() == today.getDayOfMonth()){
-            date_of_birth1 = "\nДень народження: сьогодні";
+            output_contact.append("\nДень народження: сьогодні");
         }else {
-            date_of_birth1 = "\nДень народження: "+ date_of_birth;
+            output_contact.append("\nДень народження: ").append(date_of_birth);
         }
-        return name1 + lastname1 + phone_number1 + email1 + date_of_birth1;
+        return output_contact.toString();
     }
 }
 
