@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public record Contact_Information(int id, String name, String lastname, int phone_number, String email,
                                   LocalDate date_of_birth) {
     // record для користувача (ім'я,  прізвище)
+    // id delete
     @Override
     public String toString() {
         StringBuilder output_contact = new StringBuilder();
