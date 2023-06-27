@@ -35,7 +35,7 @@ public class CRUD_operations_in_contacts implements List_of_commands {
 
     @Override
     public void updateContact(String new_name, String new_lastname, int new_phone_number, String new_email,
-                              LocalDate new_date_of_birth, int id) {
+                              LocalDate new_date_of_birth, Contact_Groups new_contact_group, int id) {
         LocalDate date_of_comparison = LocalDate.of(0,1,1);
         for (Contact_Information contact_information : contact) {
             if(contact.indexOf(contact_information) == id) {
@@ -54,12 +54,11 @@ public class CRUD_operations_in_contacts implements List_of_commands {
                 if(new_date_of_birth.compareTo(date_of_comparison) == 0){
                     new_date_of_birth = contact_information.date_of_birth();
                 }
-                Contact_Information update_contact_information = new Contact_Information (id, new_name,
-                        new_lastname, new_phone_number, new_email, new_date_of_birth);
-                deleteContact(id);
-                contact.add(id, update_contact_information);
             }
         }
+        Contact_Information update_contact_information = new Contact_Information (new_name,
+                new_lastname, new_phone_number, new_email, new_date_of_birth, new_contact_group);
+        contact.set(id, update_contact_information);
     }
     @Override
     public void deleteContact(int delete) {
@@ -70,10 +69,14 @@ public class CRUD_operations_in_contacts implements List_of_commands {
     public int searchContact(String search) {
         int id_contact = -1;
         int the_number_of_searches = 0;
+        String [] search_groups = {"FAMILY", "FRIENDS", "COLLEAGUES", "CLASSMATES", "OTHER"};
         for (Contact_Information search_information : contact){
             String phone = String.valueOf(search_information.phone_number());
             if(search_information.name().contains(search) || search_information.lastname().contains(search) ||
-                    phone.contains(search) || search_information.email().contains(search)){
+                    phone.contains(search) || search_information.email().contains(search) ||
+                    search_groups[0].contains(search.toUpperCase()) || search_groups[1].contains(search.toUpperCase())
+                    || search_groups[2].contains(search.toUpperCase())||search_groups[3].contains(search.toUpperCase())
+                    || search_groups[4].contains(search.toUpperCase())){
                 System.out.println(search_information);
                 id_contact = contact.indexOf(search_information);
                 the_number_of_searches++;

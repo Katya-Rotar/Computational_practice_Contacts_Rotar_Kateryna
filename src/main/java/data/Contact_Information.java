@@ -2,10 +2,8 @@ package data;
 
 import java.time.LocalDate;
 
-public record Contact_Information(int id, String name, String lastname, int phone_number, String email,
-                                  LocalDate date_of_birth) {
-    // record для користувача (ім'я,  прізвище)
-    // id delete
+public record Contact_Information(String name, String lastname, int phone_number, String email,
+                                  LocalDate date_of_birth, Contact_Groups contact_groups) {
     @Override
     public String toString() {
         StringBuilder output_contact = new StringBuilder();
@@ -27,8 +25,7 @@ public record Contact_Information(int id, String name, String lastname, int phon
         }else {
             output_contact.append("\nДень народження: ").append(date_of_birth);
         }
+        output_contact.append("\nГрупа: ").append(contact_groups);
         return output_contact.toString();
     }
 }
-
-// перевизначити toString, створити межі номеру телефону, якщо значення не були введені не виводити їх
