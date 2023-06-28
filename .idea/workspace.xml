@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="febaaabb-a35c-429b-b299-f699b3e8a6b5" name="Changes" comment="Using LocalDate, edit search and delete">
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/Update_Contact_Information.java" afterDir="false" />
+    <list default="true" id="febaaabb-a35c-429b-b299-f699b3e8a6b5" name="Changes" comment="Adding a Contact_Groups">
+      <change afterPath="$PROJECT_DIR$/contact.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/json/Contact_Gson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/json/GsonConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/json/JsonConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/json/LocalDateConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/data/CRUD_operations_in_contacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CRUD_operations_in_contacts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/List_of_commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/List_of_commands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/output/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/output/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,9 +29,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Record" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Record" />
       </list>
     </option>
   </component>
@@ -43,11 +47,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/Contact2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/Contact2&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -106,7 +110,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687813436055</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Improving functions,updateContact">
+      <created>1687887935122</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1687887935122</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Adding a Contact_Groups">
+      <created>1687901020684</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1687901020684</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,6 +146,8 @@
     <MESSAGE value="Creating a console user interface" />
     <MESSAGE value="New changes in classes" />
     <MESSAGE value="Using LocalDate, edit search and delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Using LocalDate, edit search and delete" />
+    <MESSAGE value="Improving functions,updateContact" />
+    <MESSAGE value="Adding a Contact_Groups" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding a Contact_Groups" />
   </component>
 </project>

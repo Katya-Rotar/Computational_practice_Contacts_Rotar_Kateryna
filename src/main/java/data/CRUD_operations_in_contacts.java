@@ -1,12 +1,22 @@
 package data;
 
+import data.json.Contact_Gson;
+
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class CRUD_operations_in_contacts implements List_of_commands {
-    List<Contact_Information> contact = new ArrayList<>();
+    private final List<Contact_Information> contact;
+    private final Contact_Gson contact_gson;
+
+    public CRUD_operations_in_contacts(List<Contact_Information> contact, Contact_Gson contact_gson) {
+        this.contact = contact;
+        this.contact_gson = contact_gson;
+    }
+    public void writeFile(){
+        contact_gson.writeContact(contact);
+    }
     @Override
     public void readContact() {
         if(!contact.isEmpty()){

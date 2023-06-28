@@ -1,16 +1,32 @@
 package output;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import data.CRUD_operations_in_contacts;
 import data.Contact_Groups;
 import data.Contact_Information;
+import data.json.Contact_Gson;
+import data.json.GsonConverter;
+import data.json.JsonConverter;
+import data.json.LocalDateConverter;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Gson gson = new GsonBuilder().setPrettyPrinting()
+                .registerTypeAdapter(LocalDate.class, new LocalDateConverter())
+                .create();
+        JsonConverter gsonConverter = new GsonConverter(gson);
+        Contact_Gson contact_gson = new Contact_Gson(gsonConverter);
+        List<Contact_Information> list_json = contact_gson.readContact();
+        if (list_json == null) list_json = new ArrayList<>();
+        CRUD_operations_in_contacts crud = new CRUD_operations_in_contacts(list_json, contact_gson);
+
         Scanner scanner = new Scanner(System.in);
-        CRUD_operations_in_contacts crud = new CRUD_operations_in_contacts();
         while (true){
             System.out.println("""
                     -----------------------
@@ -161,7 +177,10 @@ public class Main {
                     редагувати контакт (4), видалити контакт (5), знайти контакт (6). Контакт можна знайти
                     за ім'ям, прізвищем, телефоном, email і групою.
                     """);
-                case "0" -> System.exit(0);
+                case "0" -> {
+                    crud.writeFile();
+                    System.exit(0);
+                }
                 default -> System.out.println("Такої дії не існує. Виберіть іншу\n");
             }
     }
