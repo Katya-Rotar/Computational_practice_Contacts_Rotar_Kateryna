@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="febaaabb-a35c-429b-b299-f699b3e8a6b5" name="Changes" comment="Adding a Contact_Groups">
-      <change afterPath="$PROJECT_DIR$/contact.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/json/Contact_Gson.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/json/GsonConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/json/JsonConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/json/LocalDateConverter.java" afterDir="false" />
+    <list default="true" id="febaaabb-a35c-429b-b299-f699b3e8a6b5" name="Changes" comment="Working with the file system. Connecting to the Gson project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/CRUD_operations_in_contacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CRUD_operations_in_contacts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.json" beforeDir="false" afterPath="$PROJECT_DIR$/contact.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/CRUD_operations_in_contacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/ContactService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/Contact_Groups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/Contact_Groups.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/Contact_Information.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/Contact_Information.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/List_of_commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/List_of_commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/json/Contact_Gson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/json/Contact_Gson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/json/GsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/json/GsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/json/JsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/json/JsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/json/LocalDateConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/json/LocalDateConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/output/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/output/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -124,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687901020684</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Working with the file system. Connecting to the Gson project">
+      <created>1687963346892</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1687963346892</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +157,7 @@
     <MESSAGE value="Using LocalDate, edit search and delete" />
     <MESSAGE value="Improving functions,updateContact" />
     <MESSAGE value="Adding a Contact_Groups" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding a Contact_Groups" />
+    <MESSAGE value="Working with the file system. Connecting to the Gson project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working with the file system. Connecting to the Gson project" />
   </component>
 </project>

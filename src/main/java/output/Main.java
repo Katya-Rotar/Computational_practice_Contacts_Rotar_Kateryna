@@ -2,7 +2,7 @@ package output;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import data.CRUD_operations_in_contacts;
+import data.ContactService;
 import data.Contact_Groups;
 import data.Contact_Information;
 import data.json.Contact_Gson;
@@ -24,7 +24,7 @@ public class Main {
         Contact_Gson contact_gson = new Contact_Gson(gsonConverter);
         List<Contact_Information> list_json = contact_gson.readContact();
         if (list_json == null) list_json = new ArrayList<>();
-        CRUD_operations_in_contacts crud = new CRUD_operations_in_contacts(list_json, contact_gson);
+        ContactService contactService = new ContactService(list_json, contact_gson);
 
         Scanner scanner = new Scanner(System.in);
         while (true){
@@ -41,7 +41,7 @@ public class Main {
                     -----------------------""");
             String action_1 = scanner.nextLine();
             switch (action_1){
-                case "1" -> crud.readContact();
+                case "1" -> contactService.readContact();
                 case "2" ->{
                     System.out.println("""
                             Сортувати за:
@@ -49,7 +49,7 @@ public class Main {
                             2. Прізвищем
                             3. Днем народження""");
                     String sort_action = scanner.nextLine();
-                    crud.sortContact(sort_action);
+                    contactService.sortContact(sort_action);
                 }
                 case "3" -> {
                     System.out.println("Додавання нового контакту\n" +
@@ -59,18 +59,14 @@ public class Main {
                     System.out.println("Прізвище:");
                     String lastname = scanner.nextLine();
                     System.out.println("Телефон:");
-                    int phone_number = Integer.parseInt(scanner.nextLine());
-
-                    // обмеження в кількості чисел
-                    // замінити
-
+                    String phone_number = scanner.nextLine();
                     System.out.println("Email:");
                     String email = scanner.nextLine();
                     LocalDate date_of_birth = date_of_birth();
                     Contact_Groups contact_groups = adding_a_contact_group(scanner);
                     Contact_Information contact_information = new Contact_Information(name, lastname, phone_number,
                             email, date_of_birth, contact_groups);
-                    crud.addContact(contact_information);
+                    contactService.addContact(contact_information);
                 }
                 case "4" ->{
                     boolean exit_update = false;
@@ -78,9 +74,9 @@ public class Main {
                         System.out.println("""
                                 Редагування контакта
                                 ------------
-                                Введіть контакт який потрібно змінити""");
+                                Введіть контакт, який потрібно змінити""");
                         String search_update = scanner.nextLine();
-                        int id_update = crud.searchContact(search_update);
+                        int id_update = contactService.searchContact(search_update);
                         switch (id_update) {
                             case -1 -> {
                                 System.out.println("Контакт не знайдено");
@@ -88,12 +84,11 @@ public class Main {
                             }
                             case -2 -> System.out.println("""
 
-                                    Знайдено декілька контактів уточніть інформацію про контакт який потрібно змінити
+                                    Знайдено декілька контактів уточніть інформацію про контакт, який потрібно змінити
                                     """);
                             default -> {
                                 boolean exit = false;
-                                String new_name = " ", new_lastname = " ", new_email = " ";
-                                int new_phone_number = 0;
+                                String new_name = " ", new_lastname = " ", new_email = " ", new_phone_number = " ";
                                 LocalDate new_date_of_birth = LocalDate.of(0, 1, 1);
                                 Contact_Groups new_contact_groups = Contact_Groups.OTHER;
                                 while (!exit) {
@@ -118,7 +113,7 @@ public class Main {
                                         }
                                         case "3" -> {
                                             System.out.println("Введіть новий номер телефону:");
-                                            new_phone_number = Integer.parseInt(scanner.nextLine());
+                                            new_phone_number = scanner.nextLine();
                                         }
                                         case "4" -> {
                                             System.out.println("Введіть новий email:");
@@ -127,8 +122,8 @@ public class Main {
                                         case "5" -> new_date_of_birth = date_of_birth();
                                         case "6" -> new_contact_groups = adding_a_contact_group(scanner);
                                         case "0" -> {
-                                            crud.updateContact(new_name, new_lastname, new_phone_number, new_email,
-                                                    new_date_of_birth, new_contact_groups, id_update);
+                                            contactService.updateContact(new_name, new_lastname, new_phone_number,
+                                                    new_email, new_date_of_birth, new_contact_groups, id_update);
                                             exit = true;
                                         }
                                         default -> System.out.println("Такої дії не існує");
@@ -143,9 +138,9 @@ public class Main {
                 case "5" ->{
                     boolean exit = false;
                     while (!exit) {
-                        System.out.println("Введіть контакт який потрібно видалити");
+                        System.out.println("Введіть контакт, який потрібно видалити");
                         String delete_contact = scanner.nextLine();
-                        int id_delete = crud.searchContact(delete_contact);
+                        int id_delete = contactService.searchContact(delete_contact);
                         switch (id_delete){
                             case -1 -> {
                                 System.out.println("Контакт не знайдено");
@@ -153,11 +148,11 @@ public class Main {
                             }
                             case -2 -> System.out.println("""
 
-                                    Знайдено декілька контактів уточніть інформацію про контакт який потрібно видалити
+                                    Знайдено декілька контактів уточніть інформацію про контакт, який потрібно видалити
                                     """);
                             default -> {
                                 System.out.println("Контакт видалено");
-                                crud.deleteContact(id_delete);
+                                contactService.deleteContact(id_delete);
                                 exit = true;
                             }
                         }
@@ -166,19 +161,19 @@ public class Main {
                 case "6" -> {
                     System.out.println("Введіть контакт який потрібно знайти");
                     String search_contact = scanner.nextLine();
-                    int id_search = crud.searchContact(search_contact);
+                    int id_search = contactService.searchContact(search_contact);
                     if(id_search == -1){
                         System.out.println("Контакт не знайдено");
                     }
                 }
                 case "7" -> System.out.println("""
                     Ця програма використовується для збереження інформації про абонента та його номер\s
-                    В ній ви зможите переглядати контакти (1), сортувати контакти (2), додати контакт (3),
+                    В ній ви зможете переглядати контакти (1), сортувати контакти (2), додати контакт (3),
                     редагувати контакт (4), видалити контакт (5), знайти контакт (6). Контакт можна знайти
                     за ім'ям, прізвищем, телефоном, email і групою.
                     """);
                 case "0" -> {
-                    crud.writeFile();
+                    contactService.writeFile();
                     System.exit(0);
                 }
                 default -> System.out.println("Такої дії не існує. Виберіть іншу\n");
@@ -203,8 +198,6 @@ public class Main {
         if(day < 1 || day > 31){
            day = 1;
         }
-        // передбачити уведення не int
-
         return LocalDate.of(year,month,day);
     }
     public static Contact_Groups adding_a_contact_group(Scanner scanner){

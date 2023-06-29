@@ -6,11 +6,11 @@ import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
 
-public class CRUD_operations_in_contacts implements List_of_commands {
+public class ContactService implements List_of_commands {
     private final List<Contact_Information> contact;
     private final Contact_Gson contact_gson;
 
-    public CRUD_operations_in_contacts(List<Contact_Information> contact, Contact_Gson contact_gson) {
+    public ContactService(List<Contact_Information> contact, Contact_Gson contact_gson) {
         this.contact = contact;
         this.contact_gson = contact_gson;
     }
@@ -44,7 +44,7 @@ public class CRUD_operations_in_contacts implements List_of_commands {
     }
 
     @Override
-    public void updateContact(String new_name, String new_lastname, int new_phone_number, String new_email,
+    public void updateContact(String new_name, String new_lastname, String new_phone_number, String new_email,
                               LocalDate new_date_of_birth, Contact_Groups new_contact_group, int id) {
         LocalDate date_of_comparison = LocalDate.of(0,1,1);
         for (Contact_Information contact_information : contact) {
@@ -55,7 +55,7 @@ public class CRUD_operations_in_contacts implements List_of_commands {
                 if(new_lastname.equals(" ")){
                     new_lastname = contact_information.lastname();
                 }
-                if(new_phone_number == 0){
+                if(new_phone_number.equals(" ")){
                     new_phone_number = contact_information.phone_number();
                 }
                 if(new_email.equals(" ")){
@@ -81,9 +81,8 @@ public class CRUD_operations_in_contacts implements List_of_commands {
         int the_number_of_searches = 0;
         String [] search_groups = {"FAMILY", "FRIENDS", "COLLEAGUES", "CLASSMATES", "OTHER"};
         for (Contact_Information search_information : contact){
-            String phone = String.valueOf(search_information.phone_number());
             if(search_information.name().contains(search) || search_information.lastname().contains(search) ||
-                    phone.contains(search) || search_information.email().contains(search) ||
+                    search_information.phone_number().contains(search) || search_information.email().contains(search)||
                     search_groups[0].contains(search.toUpperCase()) || search_groups[1].contains(search.toUpperCase())
                     || search_groups[2].contains(search.toUpperCase())||search_groups[3].contains(search.toUpperCase())
                     || search_groups[4].contains(search.toUpperCase())){
