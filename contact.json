@@ -1,0 +1,42 @@
+[
+  {
+    "name": "РљР°С‚СЏ",
+    "lastname": "РЎР°РІС‡РµРЅРєРѕ",
+    "phone_number": "0982564513",
+    "email": "katya@gmail.com",
+    "date_of_birth": "2005-02-17",
+    "contact_groups": "FRIENDS"
+  },
+  {
+    "name": "РђРЅС‚РѕРЅ",
+    "lastname": "",
+    "phone_number": "050123645",
+    "email": "",
+    "date_of_birth": "2004-06-23",
+    "contact_groups": "CLASSMATES"
+  },
+  {
+    "name": "РљР°С‚РµСЂРёРЅР°",
+    "lastname": "РљР»РёРјРµРЅРєРѕ",
+    "phone_number": "06325491374",
+    "email": "",
+    "date_of_birth": "0000-01-01",
+    "contact_groups": "OTHER"
+  },
+  {
+    "name": "РћР»СЏ",
+    "lastname": "РЁРІРµС†СЊ",
+    "phone_number": "745896",
+    "email": "",
+    "date_of_birth": "1985-01-01",
+    "contact_groups": "OTHER"
+  },
+  {
+    "name": "РњРёС…Р°Р№Р»Рѕ",
+    "lastname": "",
+    "phone_number": "5236476915",
+    "email": "mykhailo@gmail.com",
+    "date_of_birth": "1995-06-30",
+    "contact_groups": "FAMILY"
+  }
+]
